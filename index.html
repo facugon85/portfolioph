@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Fotográfico - CUFA</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- HERO -->
+  <section class="hero">
+    <!-- Imagen lado izquierdo -->
+    <div class="hero-image"></div>
+
+    <!-- Texto lado derecho -->
+    <div class="hero-content">
+      <div class="text-content">
+        <h1>HELLO!<br>I'M<br><span>CUFA</span></h1>
+        
+        <div class="info-section">
+          <h2 class="subtitle">FOTÓGRAFO &<br>DESARROLLADOR CREATIVO</h2>
+          
+          <p class="description">
+            Transformo ideas en experiencias visuales, combinando<br>
+            diseño, desarrollo y arte digital en cada proyecto.<br>
+            Enfoque único con una perspectiva innovadora y creativa.
+          </p>
+          
+          <div class="separator"></div>
+          
+          <p class="contact">facundonic.gonzalez@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="gallery"></section>
+
+  <!-- FOOTER -->
+  <!--<footer>
+    <div class="footer-content">
+      <p>&copy; 2025 CUFA Portfolio. Todos los derechos reservados.</p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-behance"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>-->
+
+  <script>
+     // Contenedor de galería
+    const gallery = document.getElementById('portfolio');
+
+    // Cantidad de imágenes que tenés en la carpeta
+    const totalImages = 96;
+
+    // Generar array con nombres secuenciales .webp
+    let images = [];
+    for (let i = 1; i <= totalImages; i++) {
+      images.push(`/assets/photos/photo${i}.webp`);
+    }
+
+    // Mezclar aleatoriamente
+    images = images.sort(() => Math.random() - 0.5);
+
+    // Renderizar en el DOM
+    images.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = "Fotografía de CUFA";
+      img.loading = 'lazy';
+      gallery.appendChild(img);
+    });
+
+  </script>
+</body>
+</html>
